@@ -9,14 +9,21 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   background-color: #111;
-  color:#bbb;
+  color: #bbb;
 }
 
 a {
   text-decoration: none;
-  color:inherit;
+  color: inherit;
 }
 
 .container {
   background-color: rebeccapurple;
+  max-width: 1366px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
