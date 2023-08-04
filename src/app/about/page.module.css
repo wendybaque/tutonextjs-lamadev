@@ -19,13 +19,6 @@
   background-color: aquamarine;
   padding: 5px;
   color: white;
-  border-radius: 3px;
-}
-
-.imgTitle {
-}
-
-.imgDesc {
 }
 
 .textContainer {
@@ -39,9 +32,6 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-}
-
-.title {
 }
 
 .desc {
