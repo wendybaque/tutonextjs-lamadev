@@ -1,7 +1,7 @@
 .container{
   width: 42px;
   height: 24px;
-  border: 1.5px solid aquamarine;
+  border: 1.5px solid green;
   border-radius: 30px;
   display: flex;
   align-items: center;
@@ -18,7 +18,7 @@
 .ball{
   width: 15px;
   height: 15px;
-  background-color: aquamarine;
+  background-color: green;
   border-radius: 50%;
   position: absolute;
 }
