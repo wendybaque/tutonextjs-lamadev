@@ -6,41 +6,45 @@ import useSWR from "swr";
 // import { useRouter } from "next/navigation";
 import Image from "next/image";
 
+export const metadata = {
+  title: "Dashboard",
+  description: "This is Dashoboard page.",
+};
+
 const Dashboard = () => {
+  // OLD WAY TO FETCH DATA
 
-  //OLD WAY TO FETCH DATA
+  const [data, setData] = useState([]);
+  const [err, setErr] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  // const [data, setData] = useState([]);
-  // const [err, setErr] = useState(false);
-  // const [isLoading, setIsLoading] = useState(false);
+  useEffect(() => {
+    const getData = async () => {
+      setIsLoading(true);
+      const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
+        cache: "no-store",
+      });
 
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     setIsLoading(true);
-  //     const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
-  //       cache: "no-store",
-  //     });
+      if (!res.ok) {
+        setErr(true);
+      }
 
-  //     if (!res.ok) {
-  //       setErr(true);
-  //     }
+      const data = await res.json();
 
-  //     const data = await res.json()
-
-  //     setData(data);
-  //     setIsLoading(false);
-  //   };
-  //   getData()
-  // }, []);
+      setData(data);
+      setIsLoading(false);
+    };
+    getData();
+  }, []);
 
   // const session = useSession();
 
   // const router = useRouter();
-  
+
   //NEW WAY TO FETCH DATA
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
-const {data, error, isLoading} = useSWR("https://jsonplaceholder.typicode.com/posts", fetcher)
- console.log(data)
+  //   const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  // const {data, error, isLoading} = useSWR("https://jsonplaceholder.typicode.com/posts", fetcher)
+  console.log(data);
 };
 
 export default Dashboard;

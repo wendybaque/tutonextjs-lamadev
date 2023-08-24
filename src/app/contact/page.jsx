@@ -1,8 +1,13 @@
 import React from 'react';
 import styles from './page.module.css';
 import Button from "@/components/button/Button";
-import Image
- from 'next/image';
+import Image from 'next/image';
+
+export const metadata = {
+  title: "Contact",
+  description: "THis is contact page.",
+};
+
 const Contact = () => {
   return (
     <div className={styles.container}>
