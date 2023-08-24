@@ -5,8 +5,9 @@ import Image from "next/image";
 
 export const metadata = {
   title: "Blog",
-  description: "This is blog page.",
+  description: "THis is blog page.",
 };
+
 
 async function getData() {
   const res = await fetch("http://localhost:3000/api/posts", {
